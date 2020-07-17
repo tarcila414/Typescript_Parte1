@@ -12,11 +12,12 @@ export class Negociacao {
 
   //forma menos verbosa
   constructor(
-    private _data: Date,
-    private _quantidade: number,
-    private _valor: number
+    readonly data: Date, //private _data: Date,
+    readonly quantidade: number, //private _quantidade: number,
+    readonly valor: number //private _valor: number
   ) {}
 
+  /*
   get data() {
     return this._data;
   }
@@ -27,7 +28,7 @@ export class Negociacao {
 
   get valor() {
     return this._valor;
-  }
+  }*/
 
   get volume() {
     return this._quantidade * this._valor;
