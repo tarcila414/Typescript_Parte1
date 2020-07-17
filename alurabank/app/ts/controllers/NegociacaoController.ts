@@ -7,9 +7,10 @@ export class NegociacaoController {
   private _inputValor: JQuery;
   private _negociacoes: Negociacoes = new Negociacoes();
   private _negociacoesView: NegociacoesView = new NegociacoesView(
-    "#negociacoesView"
+    "#negociacoesView",
+    true
   );
-  private _mensagemView: MensagemView = new MensagemView("#mensagemView");
+  private _mensagemView: MensagemView = new MensagemView("#mensagemView", true);
 
   constructor() {
     this._inputData = $("#data");
