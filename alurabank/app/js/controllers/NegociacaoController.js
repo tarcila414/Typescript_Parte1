@@ -29,7 +29,6 @@ System.register(["../views/index", "../models/index", "../helpers/decorators/ind
                     this._negociacoesView.update(this._negociacoes);
                 }
                 adiciona(event) {
-                    event.preventDefault();
                     let data = new Date(this._inputData.val().replace(/-/g, ","));
                     if (data.getDay() == DiaDaSemana.Domingo ||
                         data.getDay() == DiaDaSemana.Sabado) {
@@ -72,8 +71,11 @@ System.register(["../views/index", "../models/index", "../helpers/decorators/ind
                 index_3.domInject("#valor")
             ], NegociacaoController.prototype, "_inputValor", void 0);
             __decorate([
-                index_3.logarTempoDeExecucao()
+                index_3.throttle()
             ], NegociacaoController.prototype, "adiciona", null);
+            __decorate([
+                index_3.throttle()
+            ], NegociacaoController.prototype, "importaDados", null);
             exports_1("NegociacaoController", NegociacaoController);
             (function (DiaDaSemana) {
                 DiaDaSemana[DiaDaSemana["Domingo"] = 0] = "Domingo";
